@@ -1,14 +1,14 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+config.hosts << "33a51b081eb1470eb925a051127002d7.vfs.cloud9.us-east-2.amazonaws.com"
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
-
+config.hosts.clear
   # Do not eager load code on boot.
   config.eager_load = false
-
+config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Show full error reports.
   config.consider_all_requests_local = true
 

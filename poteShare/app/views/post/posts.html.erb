@@ -1,0 +1,31 @@
+<div>
+  <% @share.each do |share| %>
+  <table>
+  <tr>
+            <th>ルーム画像</th>
+            <th>ルーム名</th>
+            <th>ルーム紹介</th>
+            <th>料金	</th>
+            <th>作成日	</th>
+            
+            </td>
+          <tr>
+            
+            <td>
+              <% if share.image%>
+              <%= link_to image_tag(share.image.url ,width: "240px",height: "140px" ),reserve_room_path(share)%>
+            <%else%>
+            <p>画像がありません</p>
+          <%end%>
+          </td>
+            <td><%= share.title %></td>
+            <td><%= share.comment %></td>
+            <td><%= share.price%></td>
+            <td><%= share.updated_at.strftime("%Y年%m月%d日%-H時%M分")%></td>
+            </td>
+            
+           </table>
+           
+           <% end %>
+  
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  price: 1
+  area: 1
+  comment: MyText
+  start: 2021-10-09 20:05:47
+  end: 2021-10-09 20:05:47
+  image: MyText
+
+two:
+  title: MyString
+  price: 1
+  area: 1
+  comment: MyText
+  start: 2021-10-09 20:05:47
+  end: 2021-10-09 20:05:47
+  image: MyText

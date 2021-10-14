@@ -1,0 +1,22 @@
+// Place all the styles related to the reserve controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room{
+  display:flex;
+  widthL:100%;
+}
+
+.room-left{
+ width:65%;
+}
+
+.room-left img{
+  width:100%;
+  margin:10px;
+}
+.room-right{
+  width:30%;
+  margin:15px auto auto 35px;
+  border: 2px solid #F6F8F9;
+  height:600px;
+}

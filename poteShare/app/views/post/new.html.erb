@@ -1,0 +1,45 @@
+<div class = 'room-out'>
+<div class = 'room-in left'>基本情報登録</div>
+<div class ="room-in right">
+ <%= form_with url: post_index_path,local: true do |f| %>　　<!--form_forだとうまく送れなかった{form_for '@plan' do |f|}-->
+      
+      <table>
+        <tr>
+          <th>ルーム情報登録</th>
+          </tr>
+        <tr>
+          <th><%= f.label :title ,"ルーム名" %></th>
+          <td><%= f.text_field :title ,placeholder: "ルーム名を入力"%></td>
+        </tr>
+        
+        <tr>
+        <th><%= f.label :comment ,"ルーム紹介" %></th>
+       <td><%= f.text_field :comment,placeholder: "ルーム説明を入力"%></td>
+       </tr>
+        
+        <tr>
+          <th><%= f.label :price ,"料金" %></th>
+          <td><%= f.number_field :price,placeholder: "1日あたりの料金を入力"%></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :area ,"住所" %></th>
+          <td><%= f.text_field :area,placeholder: "住所を入力"%></td>
+        </tr>
+        
+        <tr>
+          <th><%= f.label :image,"ルーム画像" %></th>
+          <td><%= f.file_field :image %></td>
+        </tr>
+        
+        <tr>
+          <td><%= f.submit "登録完了する"%></td>
+          </tr>
+          
+     
+      </table>
+    
+    
+ <%end%>
+ </div>
+ </div>

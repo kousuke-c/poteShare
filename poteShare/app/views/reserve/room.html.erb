@@ -1,0 +1,69 @@
+    <div class = 'room'>
+   
+    <table class = 'room-left'>
+      <tr>
+        
+        <td><%= image_tag @share.image.url %></td>
+      </tr>
+      <tr>
+        
+        <td><%= @share.title %></td>
+      </tr>
+       <tr>
+        
+        <td><%= @share.area %></td>
+      </tr>
+      <tr>
+       
+        <td><%= @share.comment %></td>
+      
+      </tr>
+      
+       <tr>
+        
+        <td><%= @share.id %></td>
+      </tr>
+      <tr>
+      
+    </table>
+  
+
+   
+      <table class="room-right">
+         <%= form_for @reserve, method: :post, url: reserve_confirm_path(@share) do |f| %>
+          
+           <td><%= @share.price %></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :start ,"開始日" %></th>
+          <td><%= f.date_field :start%></td>
+        </tr>
+ 
+        <tr>
+          <th><%= f.label :end ,"終了日" %></th>
+          <td><%= f.date_field :end%></td>
+        </tr>
+        
+       <tr>
+        <th><%= f.label :people ,"人数" %></th>
+       <td><%= f.number_field :people%><td>
+       </tr> 
+       
+        <%= f.hidden_field :price,value: @share.price%>
+    	<%= f.hidden_field :title ,value: @share.title%>
+    	<%= f.hidden_field :area ,value: @share.area%>   	
+    	<%= f.hidden_field :comment,value: @share.comment %>
+    	<%= f.hidden_field :image,value: @share.image%>
+         
+      
+     
+	     <tr>
+          <td><%= f.submit "予約する" %><td>
+       </tr>
+        </table>
+        
+        
+<%end%>
+ 
+ </div>
