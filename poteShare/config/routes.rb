@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+ 
   get '/',to:'post#index'
   get 'reserve/room'
   get 'reserve/comprete'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   get 'post/search_room'
   get 'search' => 'posts#search'
   get 'post/search'
+  get 'post/show'
   resources :reserve
   resources :post
   

@@ -3,11 +3,19 @@ class PostController < ApplicationController
  
   
   def index
+   
    @q = Post.ransack(params[:q])
    @search = @q.result(distinct: true)
+  
+  end
+  
+  def show
+      @user = current_user
   end
   
   def search_room
+@q = Post.ransack(params[:q])
+   @search = @q.result(distinct: true)
 
   end
       

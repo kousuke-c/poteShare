@@ -34,6 +34,12 @@ footer{
     text-align: center;
 }
 
+.header-right-nav{
+   
+
+
+}
+
 .header-nav-menu {
     background-color: #fff;
     border: 3px solid #F6F8F9;
@@ -84,6 +90,9 @@ display: block;
 
 .header-inner{
   display: flex;
+  width: 100%;
+  position: relative;
+    justify-content: space-between;
 }
 
 .wrap {
@@ -135,4 +144,36 @@ display: block;
  text-align: center;
  padding: 30px 70px 15px 70px;
   border: 1px solid #f5f5f5;
+}
+
+.header-left-nav{
+    display: flex;
+}
+
+.edit .field input {
+   width: 400px;
+   height: 40px;
+   margin-bottom: 7px;
+}
+.edit{
+ height: 550px;
+}
+
+.edit .field a{
+  display: block;
+   width: 400px;
+   height: 40px;
+   margin-bottom: 20px;
+   border:solid 1px #808080;
+   margin: auto;
+   color: #6495ed;
+   line-height: 35px;
+}
+.submit input {
+  background-color: #6495ed;
+  color: #fff;
+  border:none;
+}
+.submit{
+  background-color: #fff;
 }
