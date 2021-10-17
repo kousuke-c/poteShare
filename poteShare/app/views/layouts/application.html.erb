@@ -12,7 +12,26 @@
 <header>
   <div class="header-inner">
     <div class="header-left-nav">
+        
   <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png", alt: "サンプル画像"), '/' %>
+ 
+ <div class='search'>
+     <%= search_form_for @q ,url: post_search_room_path do |f| %>
+  
+  <%= f.search_field :area_cont , placeholder: "エリア" %>
+
+
+<% end %>
+</div>
+
+<div class='search'><%= search_form_for @q ,url: post_search_room_path do |f| %>
+  
+  <%= f.search_field :area_or_title_or_comment_cont , placeholder: "キーワード" %>
+
+
+<% end %>
+</div>
+
  </div>
  <div class="header-right-nav">
 <%= link_to "新規登録",'/' ,class:'link' %>

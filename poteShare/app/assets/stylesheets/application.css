@@ -136,3 +136,43 @@ display: block;
  padding: 30px 70px 15px 70px;
   border: 1px solid #f5f5f5;
 }
+
+.header-left-nav{
+  display: flex;
+}
+
+.header-right-nav{
+  margin: auto 30px auto auto;
+}
+
+.header-left-nav .search input{
+  width: 170px;
+  height: 40px;
+  
+}
+
+.header-left-nav .search{
+  margin: auto 2px;
+}
+.mb-4{
+ font-size: 27px; 
+ margin-top: 0px;
+}
+
+.search-form{
+  margin-top: 45px;
+}
+
+.index-search{
+  width: 100%;
+  border:solid 1px #d3d3d3;
+}
+
+.index-submit{
+  width: 100%;
+  margin-top: 15px;
+  height: 40px;
+  background-color: #1e90ff;
+  color: #fff;
+  border: none;
+}

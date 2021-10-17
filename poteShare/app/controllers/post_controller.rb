@@ -5,9 +5,14 @@ class PostController < ApplicationController
   def index
    @q = Post.ransack(params[:q])
    @search = @q.result(distinct: true)
+   
+
   end
   
   def search_room
+@q = Post.ransack(params[:q])
+   @search = @q.result(distinct: true)
+   @count = @search.count
 
   end
       

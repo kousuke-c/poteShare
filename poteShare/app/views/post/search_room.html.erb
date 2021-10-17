@@ -1,27 +1,27 @@
-<% @post.each do |share| %>
-  <table>
-  <tr>
-            <th>ルーム画像</th>
-            <th>ルーム名</th>
-            <th>ルーム紹介</th>
-            <th>合計料金	</th>
-            <th>開始日	</th>
-            <th>終了日	</th>
-            <th>予約確定日時</th>
-            </td>
-          <tr>
-            
-            <td>
-              
-          </td>
-            <td><%= share.title %></td>
-            <td><%= share.comment %></td>
-            <td><%= share.price%></td>
-            <td><%= share.start %></td>
-            <td><%= share.end%></td>
-            <td><%= share.updated_at.strftime("%Y年%m月%d日%-H時%M分")%></td>
-            </td>
-            
-           </table>
-           
-           <% end %>
+<div class="container-fiuld room">
+  <h1 class="pb-4">検索結果：<%=@count%>件</h1>
+  <div class="row">
+  <% @search.each do |share| %>
+  
+   <div class="room-frame-inner">
+    <%= link_to reserve_room_path(share) do %>
+          <div class="room-image-out">
+            <% if share.image.url%>
+              <%= image_tag share.image.url ,width: "330px",height: "180px" %>
+            <%else%>
+             <p>画像がありません</p>
+            <%end%>
+          </div>
+          <div class = 'down'>
+            <p class = 'search-title'><%= share.title %></p>
+            <p class = 'search-area'><%= share.area %></p>
+            <p class = 'search-price'>¥<%= share.price%></p>
+          </div>
+    <% end %>
+   </div>  
+  <% end%>
+ </div>
+</div>
+
+
+

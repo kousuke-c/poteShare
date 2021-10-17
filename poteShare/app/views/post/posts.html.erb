@@ -12,7 +12,7 @@
           <tr>
             
             <td>
-              <% if share.image%>
+              <% if share.image.url%>
               <%= link_to image_tag(share.image.url ,width: "240px",height: "140px" ),reserve_room_path(share)%>
             <%else%>
             <p>画像がありません</p>
