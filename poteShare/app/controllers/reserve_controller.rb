@@ -15,6 +15,8 @@ class ReserveController < ApplicationController
 		end
 		@day=((@reserve.end)-(@reserve.start))/86400
 		@price=@reserve.people*@day*@share.price
+		
+    @image = @share.image 
   end
   
   def comprete

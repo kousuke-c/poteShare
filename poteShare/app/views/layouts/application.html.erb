@@ -34,21 +34,27 @@
 
  </div>
  <div class="header-right-nav">
-<%= link_to "新規登録",'/' ,class:'link' %>
+   <% unless current_user%>
+<li><%= link_to "新規登録",new_user_registration_path,class:'link' %></li>
+<li><%= link_to "ログイン",new_user_session_path,class:'link' %></li>
+
+<%else%>
 <div class="nav-item">
   <label for="label1">メニュー</label>
  <input type="checkbox" id="label1" class="switch" />
-        <img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/uploads/user/image/836/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2021-09-12_5.40.10_2_.png" />
+        <label for="label1"><img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="/uploads/user/image/836/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88_2021-09-12_5.40.10_2_.png" />
+        </label>
         <ul class="header-nav-menu">
           <li><%= link_to "ルーム登録",new_post_path %></li>
           <li><%= link_to "予約済みルーム一覧",reserve_reserved_path,class:'link' %></li>
           <li><%= link_to "登録済みルーム一覧",post_posts_path,class:'link' %></li>
-          <li><a href="/users/account">設定</a></li>
-          <li><%= link_to "新規登録",new_user_registration_path,class:'link' %></li>
+          <li><%= link_to "設定",post_show_path,class:'link' %></li>
+          
           <li><a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a></li>
         </ul>
        
       </div>
+      <%end%>
  </div>
   </div>
   <p class="notice"><%= notice %></p>

@@ -9,6 +9,10 @@ class PostController < ApplicationController
 
   end
   
+  def show
+    @user = current_user
+  end
+  
   def search_room
 @q = Post.ransack(params[:q])
    @search = @q.result(distinct: true)

@@ -1,0 +1,68 @@
+
+
+     <div class="container-fiuld user">
+    <div class="row">
+        
+<div class="col-lg-2 user-nav user-nav-mobile d-lg-none">
+     <ul>
+        <li class="no-active"><%= link_to "アカウント",post_show_path %></a></li>
+        <li class="active"><%= link_to "プロフィール",users_show_path %></a></li>
+    </ul>
+</div>
+        <div class="col-lg-10 user-view">
+            <div class="user-view-box">
+                <div class="update-content">
+                    <div class="row">
+                        <h5>プロフィール</h5>
+                    </div>
+                </div>
+                <%= form_with url: user_registration_path,model: @user,local: true do |f| %>
+                    <div class="update-content">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <div class="icon-box">
+                                  <% if @user.image%>
+                                  <%= image_tag @user.image.url ,width: "240px",height: "140px" , class: "icon-image host-icon"%>
+                                    <%else%>
+                                    <%= image_tag '/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg' ,width: "240px",height: "140px" , class: "icon-image host-icon"%>
+                                    
+                                    <% end%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                          <%= f.label :image ,"アイコン画像" ,class: 'col-md-3 required-a'%>
+                            
+                            <%= f.file_field :image ,placeholder: "アイコン画像をアップロード" , class: "mb-4 col-md-9"%>
+                    
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                          <%= f.label :name,"名前",class: "col-md-3 required-a"%>
+                            
+                            <%= f.text_field :name ,placeholder: "名前を入力",class: "form-control mb-4 col-md-9"%>
+
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                          <%= f.label :profile ,"自己紹介" ,class: "col-md-3 required-a"%>
+                            
+                           <%= f.text_field :profile ,placeholder: "自己紹介を入力" ,height:'130px',class: "form-control mb-4 col-md-9 profile"%>
+                          
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                          <%= f.submit "更新",class: "col-md-2 btn btn-primary mx-3"%>
+                           
+                        </div>
+                    </div>
+                    <%end%>
+        </div>
+        </div>
+    </div>
+</div>

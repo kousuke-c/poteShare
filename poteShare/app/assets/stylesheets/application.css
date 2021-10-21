@@ -34,10 +34,20 @@ footer{
     text-align: center;
 }
 
+
+.switch{
+  display: none;
+}
+
 .header-nav-menu {
-    background-color: #fff;
+ display: none;
+}
+
+.switch:checked ~  .header-nav-menu{
+  display: block;
+ background-color: #fff;
     border: 3px solid #F6F8F9;
-    
+
     position: absolute;
     top: 70px;
     right: 10px;
@@ -45,15 +55,17 @@ footer{
     z-index: 1000;
 }
 
-ul {
-    list-style: none;
-}
-
 .header-nav-menu li {
     line-height: 30px;
     font-size: 16px;
     padding: 3px 5px;
 }
+
+
+ul {
+    list-style: none;
+}
+
 
 a {
     color: #007bff;
@@ -65,17 +77,6 @@ a {
     color: #000;
 }
 
-.switch:checked  + .header-nav-menu{
-  display:block;
-} 
- input[type="checkbox"] {
-  display: none;
-}
-label{
-display: block;
-font-size: 10px;
-color: #fff;
-}
 
 
 .link{
@@ -86,37 +87,7 @@ display: block;
   display: flex;
 }
 
-.wrap {
-  margin: 2em 0;
-  padding: 0;
-}
 
-.wrap label {
-  display: block;
-  padding : 8px;
-  color: #fff;
-  font-weight: bold;
-  background: #999;
-  cursor: pointer;
-}
-
-.wrap input[type="checkbox"] {
-  display: none;
-}
-
-.wrap .content {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-}
-
-.switch:checked + .content {
-  height: auto;
-  padding: 8px;
-  background: #f7f7f7;
-}
 
 
 
@@ -130,10 +101,10 @@ display: block;
 
 .inline{
  margin: 30px auto auto auto;
- width: 450px;
+ width: 350px;
  height: 350px;
  text-align: center;
- padding: 30px 70px 15px 70px;
+ padding: 30px 100px 15px 100px;
   border: 1px solid #f5f5f5;
 }
 
@@ -176,3 +147,90 @@ display: block;
   color: #fff;
   border: none;
 }
+
+.device-edit .inline{
+ height: 500px;
+ padding-top: 20px;
+}
+
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.device-edit input{
+  width: 100%;
+  height: 33px;
+  border:solid 1px #c0c0c0;
+}
+
+.device-edit .field{
+  height: 80px;
+}
+
+.device-edit .field p{
+margin:0px;
+font-size: 15px;
+}
+
+.actions{
+   height: 33px;
+}
+
+.actions input{
+  background-color: #1e90ff;
+  color: #fff;
+  border:none;
+  margin-top: 30px;
+  
+}
+
+.device-edit a{
+  color: #1e90ff;
+  border:solid 1px #000000;
+ width: 350px;
+display: block;
+height: 30px;
+padding-top: 10px;
+margin-top: -100px;
+font-size: 15px;
+}
+
+.user .user-view {
+    background-color: #F6F8F9;
+    
+}
+
+
+.container-fiuld{
+  height: 100vh;
+}
+
+.container-fiuld .row{
+  height: 100%;
+}
+
+.mx-3{
+  color: #fff;
+}
+
+.btn-primary {
+    background-color: #4a90e2 !important;
+    padding: 10px 55px;
+    border-radius: 4px;
+}
+
+.col-md-9{
+  margin-left: 60px;
+}
+
+h5{
+  font-size: 25px;
+  margin: 0px;
+  font-weight: normal;
+}
+
+
+
+

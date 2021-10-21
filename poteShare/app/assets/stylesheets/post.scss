@@ -52,6 +52,7 @@
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+    width:100%;
 }
 
 .col-lg-3 {
@@ -176,7 +177,7 @@ form {
 }
 
 .mb-4{
-  font-size:32px;
+ 
   line-height:40px;
   margin-bottom:0px;
 }
@@ -251,7 +252,108 @@ form {
     margin-top:20px;
 }
 
-.panel-item input{
-  
-    
+.d-lg-none{
+  width:15%;
 }
+
+.user-view{
+    width:85%;
+}
+
+.user-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 30px auto;
+}
+
+.update-content {
+    border-bottom: 1px solid #eaedef;
+    padding: 20px;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: #4a90e2 !important;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.update-content label {
+    font-weight: bold;
+}
+
+.col-md-9 {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 60%;
+    margin:auto 30px auto auto;
+}
+
+
+.user-nav-pc {
+    height: 100vh;
+}
+
+.room-frame-inner{
+    max-height:332px;
+}
+
+.active{
+border-right: 3px solid #4a90e2;
+
+    }
+    .no-active a:hover{
+    color:#4a90e2;
+}
+.active a{
+    color:#4a90e2;
+}
+    
+.d-lg-none li{
+    font-size:17px;
+    padding:7px;
+}
+
+.required-a::after {
+    content: "必須";
+    color: #fff;
+    background-color: #ff0000a8;
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 0 5px;
+}
+
+.room-new .room-view-box {
+    max-width: 880px;
+    background-color: #fff;
+    border: 1px solid #eaedef;
+    margin: 50px auto ;
+}
+.room-view{
+    padding:0px auto;
+    background-color:#f5f5f5;
+    width:85%;
+}
+
+.update-content .row{
+    width:100%;
+}
+
+
+
+
+
+
+
+
+
