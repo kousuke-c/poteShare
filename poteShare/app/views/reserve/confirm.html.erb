@@ -25,14 +25,14 @@
       </tr>
       </tr>
     </table>
-   <% @image= @images %>
+   
 
 <%= form_for @reserve, method: :post, url: reserve_comprete_path(@reserve) do |f| %>
 	<%= f.hidden_field :price,value: @price%>
     	<%= f.hidden_field :title ,value: @share.title%>
     	<%= f.hidden_field :area ,value: @share.area%>   	
     	<%= f.hidden_field :comment,value: @share.comment %>
-    	<%= f.hidden_field :image,value: images %>
+    	<%= f.hidden_field :image,value: @image %>
      <%= f.hidden_field :start ,value: @reserve.start%>   	
     	<%= f.hidden_field :end,value: @reserve.end %>
      <%= f.hidden_field :people,value: @reserve.people %>

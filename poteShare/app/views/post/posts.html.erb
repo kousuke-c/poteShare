@@ -1,31 +1,37 @@
-<div>
-  <% @share.each do |share| %>
-  <table>
-  <tr>
-            <th>ルーム画像</th>
-            <th>ルーム名</th>
-            <th>ルーム紹介</th>
-            <th>料金	</th>
-            <th>作成日	</th>
+<div class = 'posts'><h5>登録済みルーム一覧</h5>
+  
+  
+    <div class='posts-border'>
+       
+             <div class ='image ppd'>ルーム画像</div>
+            <div class = 'title ppd'>ルーム名</div>
+            <div class ='room ppd'>ルーム紹介</div>
+            <div class ='price ppd'>料金	</div>
+            <div class = 'day ppd'>作成日	</div>
             
-            </td>
-          <tr>
+            </div>
             
-            <td>
-              <% if share.image.url%>
+            <% @share.each do |share| %>
+              
+         <div class='posts-border'>
+       
+             <div><% if share.image.url%>
               <%= link_to image_tag(share.image.url ,width: "240px",height: "140px" ),reserve_room_path(share)%>
             <%else%>
             <p>画像がありません</p>
-          <%end%>
-          </td>
-            <td><%= share.title %></td>
-            <td><%= share.comment %></td>
-            <td><%= share.price%></td>
-            <td><%= share.updated_at.strftime("%Y年%m月%d日%-H時%M分")%></td>
-            </td>
+          <%end%></div>
+          <%= link_to share.title,reserve_room_path(share),class:'title2 ppd2'%>
             
-           </table>
+            <div class ='room2 ppd2'><%= share.comment %></div>
+            <div class ='price2 ppd2'>¥<%= share.price%>	</div>
+            <div class = 'day2 ppd2'><%= share.updated_at.strftime("%Y年%m月%d日%-H時%M分")%>	</div>
+            
+            </div>
+           
+          
            
            <% end %>
-  
+           
+   </table>
+   <div class='posts-border'> </div>
 </div>

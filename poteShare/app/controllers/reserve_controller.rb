@@ -20,7 +20,7 @@ class ReserveController < ApplicationController
   end
   
   def comprete
-    Reserve.create!(plan_params)
+    Reserve.create(plan_params)
   @reserve = Reserve.new(plan_params)
   end
 
