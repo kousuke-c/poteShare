@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          validates :email,:name,presence: true
           validates :name, :profile, :image,presence: true, on: :update
-      mount_uploader :image, ImageUploader
+     
 end
