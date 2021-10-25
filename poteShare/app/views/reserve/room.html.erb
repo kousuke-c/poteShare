@@ -1,8 +1,8 @@
     <div class = 'room'>
-   
+
     <div class = 'room-left'>
       
-     <div><%= image_tag @share.image.url,height:'450px' ,width:'650px'%></div>
+     <div><%= image_tag @room.image.url,height:'450px' ,width:'650px'%></div>
         
         
         <div class= 'stmi'>
@@ -11,16 +11,16 @@
         
         <div>
         
-         <div class= 'rooms aa'><%= @share.title %></div>
+         <div class= 'rooms aa'><%= @room.title %></div>
         
-         <div class= 'rooms aa'><%= @share.area %></div>
+         <div class= 'rooms aa'><%= @room.area %></div>
         
        </div>
        
        </div>
        <div class ='sstt'>
          
-        <div class= 'rooms'><%= @share.comment %></div>
+        <div class= 'rooms'><%= @room.comment %></div>
       </div>
        
      
@@ -29,20 +29,20 @@
 
    
       <div class = 'room-right'>
-         <%= form_for @reserve, method: :post, url: reserve_confirm_path(@share) do |f| %>
+         <%= form_for @reserve, method: :post, url: reserve_confirm_path(@room) do |f| %>
          
            
-             <h3>¥<%= @share.price %>/ 日</h3>
+             <h3>¥<%= @room.price %>/ 日</h3>
             
      
             <div class='date'>
         <%= f.label :start ,"開始日" %></br>
-        <%= f.date_field :start,class:'date-field'%>
+        <%= f.date_field :start,class:'date-field', min: Date.current%>
        </div>
  
         <div class='date'>
           <%= f.label :end ,"終了日" %></br>
-          <%= f.date_field :end,class:'date-field'%></div>
+          <%= f.date_field :end,class:'date-field', min: Date.current%></div>
        
         
      <div class='date'>
@@ -50,11 +50,11 @@
        <%= f.number_field :people,class:'date-field'%></div>
        
        
-        <%= f.hidden_field :price,value: @share.price%>
-    	<%= f.hidden_field :title ,value: @share.title%>
-    	<%= f.hidden_field :area ,value: @share.area%>   	
-    	<%= f.hidden_field :comment,value: @share.comment %>
-    	<%= f.hidden_field :roomid,value: @share.id%>
+        <%= f.hidden_field :price,value: @room.price%>
+    	<%= f.hidden_field :title ,value: @room.title%>
+    	<%= f.hidden_field :area ,value: @room.area%>   	
+    	<%= f.hidden_field :comment,value: @room.comment %>
+    	<%= f.hidden_field :roomid,value: @room.id%>
          
       
      

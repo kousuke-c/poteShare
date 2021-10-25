@@ -11,7 +11,7 @@
             
         </tr>
           <tr>
-           <% @reserve.each do |share| %>
+           <% @reserve.each do |reserve| %>
             <td>
              <% if @reserve.image.url%>
               <%= link_to image_tag(.@reserve.image.url ,width: "240px",height: "140px" ),reserve_room_path(share)%>
@@ -19,12 +19,12 @@
              <p>画像がありません</p>
              <%end%>
             </td>
-            <td><%= share.title %></td>
-            <td><%= share.comment %></td>
-            <td><%= share.price%></td>
-            <td><%= share.start %></td>
-            <td><%= share.end%></td>
-            <td><%= share.updated_at.strftime("%Y年%m月%d日%-H時%M分")%></td>
+            <td><%= reserve.title %></td>
+            <td><%= reserve.comment %></td>
+            <td><%= reserve.price%></td>
+            <td><%= reserve.start %></td>
+            <td><%= reserve.end%></td>
+            <td><%= reserve.updated_at.strftime("%Y年%m月%d日%-H時%M分")%></td>
           
           </tr>
            <% end %>

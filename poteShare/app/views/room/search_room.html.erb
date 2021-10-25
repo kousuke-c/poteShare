@@ -1,0 +1,23 @@
+  <div class="row">
+  <% @search.each do |room| %>
+  
+   <div class="room-frame-inner">
+    <%= link_to reserve_room_path(room) do %>
+          <div class="room-image-out">
+            <% if room.image.url%>
+              <%= image_tag room.image.url ,width: "330px",height: "180px" %>
+            <%else%>
+             <p>画像がありません</p>
+            <%end%>
+          </div>
+          <div class = 'down'>
+            <p class = 'search-title'><%= room.title %></p>
+            <p class = 'search-area'><%= room.area %></p>
+            <p class = 'search-price'>¥<%= room.price%></p>
+          </div>
+    <% end %>
+   </div>  
+  <% end%>
+ </div>
+</div>
+

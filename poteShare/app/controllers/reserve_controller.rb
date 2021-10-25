@@ -1,22 +1,23 @@
 class ReserveController < ApplicationController
   def room
    
-    @share = Room.find(params[:format])
+    @room = Room.find(params[:format])
     @reserve = Booking.new
     
   end
 
   
   def confirm
-    @share = Room.find(params[:format])
+    @room = Room.find(params[:format])
     @reserve = Booking.new(reserve_params)
       
 		if @reserve.invalid?
-			render reserve_room_path(@share)
-		end
+			render reserve_room_path
+			
+	else
 		@day=((@reserve.end)-(@reserve.start))/86400
-		@price=@reserve.people*@day*@share.price
-		
+		@price=@reserve.people*@day*@room.price
+			end
    
   end
   
@@ -30,7 +31,7 @@ class ReserveController < ApplicationController
 
   def back
 		@reserve = Booking.new(reserve_params)
-		@share = Room.find(params[:format])
+		@room = Room.find(params[:format])
 		render reserve_room_path
 	end
   

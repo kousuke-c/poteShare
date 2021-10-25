@@ -2,7 +2,7 @@
  
 <div class='confirm-in'>
         <h5>予約内容確認</h5>
-        <div class = 'confirm-price'>¥<%= @share.price %>/ 日</div>
+        <div class = 'confirm-price'>¥<%= @room.price %>/ 日</div>
         
        <div>
         <p>開始日</p>
@@ -29,10 +29,10 @@
      <div class = 'confirm-form'>
 <%= form_for @reserve, method: :post, url: reserve_comprete_path(@reserve) do |f| %>
 	<%= f.hidden_field :price,value: @price%>
-    	<%= f.hidden_field :title ,value: @share.title%>
-    	<%= f.hidden_field :area ,value: @share.area%>   	
-    	<%= f.hidden_field :comment,value: @share.comment %>
-    	<%= f.hidden_field :roomid,value: @share.id %>
+    	<%= f.hidden_field :title ,value: @room.title%>
+    	<%= f.hidden_field :area ,value: @room.area%>   	
+    	<%= f.hidden_field :comment,value: @room.comment %>
+    	<%= f.hidden_field :roomid,value: @room.id %>
      <%= f.hidden_field :start ,value: @reserve.start%>   	
     	<%= f.hidden_field :end,value: @reserve.end %>
      <%= f.hidden_field :people,value: @reserve.people %>
@@ -40,11 +40,11 @@
 	    <%= f.submit '予約を確定' ,class:'submit'%>
 <% end %>
 
- <%= form_for @reserve, method: :post, url: reserve_back_path(@share) do |f| %>
+ <%= form_for @reserve, method: :post, url: reserve_back_path(@room) do |f| %>
 	<%= f.hidden_field :price,value: @price%>
-    	<%= f.hidden_field :title ,value: @share.title%>
-    	<%= f.hidden_field :area ,value: @share.area%>   	
-    	<%= f.hidden_field :comment,value: @share.comment %>
+    	<%= f.hidden_field :title ,value: @room.title%>
+    	<%= f.hidden_field :area ,value: @room.area%>   	
+    	<%= f.hidden_field :comment,value: @room.comment %>
     	
              <%= f.hidden_field :start ,value: @reserve.start%>   	
     	<%= f.hidden_field :end,value: @reserve.end %>

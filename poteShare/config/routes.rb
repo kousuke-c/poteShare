@@ -1,25 +1,30 @@
 Rails.application.routes.draw do
+  get 'room/new'
+  get 'room/index'
+  get 'room/posts'
+  get 'room/search_room'
+  get 'room/show'
   get 'users/show'
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get '/',to:'post#index'
+  get '/',to:'room#index'
   get 'reserve/room'
   get 'reserve/comprete'
   get 'reserve/confirm'
-  get 'post/new',to:'post#new'
-  get 'post/posts'
-  get 'post/nono'
+ 
+post 'room/create'
  post 'reserve/confirm'
  post 'reserve/comprete'
  post 'reserve/back' 
   get 'reserve/reserved'
-  get 'post/search_room'
-  get 'search' => 'posts#search'
-  get 'post/search'
-  get 'post/show'
+  get 'reserve/room'
+
+  get 'search' => 'room#search'
+  get 'room/search'
+
   resources :reserve
-  resources :post
+  resources :room
    resources :users
-   get 'post/newError'
+  
    
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
