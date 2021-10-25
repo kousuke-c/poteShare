@@ -3,7 +3,7 @@ class PostController < ApplicationController
  
   
   def index
-   @q = Post.ransack(params[:q])
+   @q = Room.ransack(params[:q])
    @search = @q.result(distinct: true)
    
 
@@ -14,34 +14,38 @@ class PostController < ApplicationController
   end
   
   def search_room
-@q = Post.ransack(params[:q])
+@q = Room.ransack(params[:q])
    @search = @q.result(distinct: true)
    @count = @search.count
 
   end
       
   def new
-     @share = Post.new
+     @share = Room.new
     
   end
   
   def create
-      @share = Post.new(plan_params)
+      @share = Room.new(post_params)
       
        if @share.save
          flash[:notice] = "ルーム登録しました"
          redirect_to "/"
        else
-           render new_post_path
+           render :new
        end
   end
   
-  def plan_params
+  def newError
+    @share = Room.new
+  end
+  
+  def post_params
         params.permit(:title ,:price,:area,:comment,:image)
        
   end
   
   def posts
-      @share =Post.all
+      @share =Room.all
   end
   end

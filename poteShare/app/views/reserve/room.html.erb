@@ -1,67 +1,65 @@
     <div class = 'room'>
    
-    <table class = 'room-left'>
-      <tr>
+    <div class = 'room-left'>
+      
+     <div><%= image_tag @share.image.url,height:'450px' ,width:'650px'%></div>
         
-        <td><%= image_tag @share.image.url %></td>
-      </tr>
-      <tr>
         
-        <td><%= @share.title %></td>
-      </tr>
-       <tr>
+        <div class= 'stmi'>
+        <%= link_to image_tag("https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg",class:"mx-3 p-1 host-icon nav-trigger roomss"),"/"%>
         
-        <td><%= @share.area %></td>
-      </tr>
-      <tr>
+        
+        <div>
+        
+         <div class= 'rooms aa'><%= @share.title %></div>
+        
+         <div class= 'rooms aa'><%= @share.area %></div>
+        
+       </div>
        
-        <td><%= @share.comment %></td>
-      
-      </tr>
-      
-       <tr>
-        
-        <td><%= @share.id %></td>
-      </tr>
-      <tr>
-      
-    </table>
-  
+       </div>
+       <div class ='sstt'>
+         
+        <div class= 'rooms'><%= @share.comment %></div>
+      </div>
+       
+     
+ 
+  </div>
 
    
-      <table class="room-right">
+      <div class = 'room-right'>
          <%= form_for @reserve, method: :post, url: reserve_confirm_path(@share) do |f| %>
-          
-           <td><%= @share.price %></td>
-        </tr>
+         
+           
+             <h3>¥<%= @share.price %>/ 日</h3>
+            
+     
+            <div class='date'>
+        <%= f.label :start ,"開始日" %></br>
+        <%= f.date_field :start,class:'date-field'%>
+       </div>
  
-        <tr>
-          <th><%= f.label :start ,"開始日" %></th>
-          <td><%= f.date_field :start%></td>
-        </tr>
- 
-        <tr>
-          <th><%= f.label :end ,"終了日" %></th>
-          <td><%= f.date_field :end%></td>
-        </tr>
+        <div class='date'>
+          <%= f.label :end ,"終了日" %></br>
+          <%= f.date_field :end,class:'date-field'%></div>
+       
         
-       <tr>
-        <th><%= f.label :people ,"人数" %></th>
-       <td><%= f.number_field :people%><td>
-       </tr> 
+     <div class='date'>
+       <%= f.label :people ,"人数" %></br>
+       <%= f.number_field :people,class:'date-field'%></div>
+       
        
         <%= f.hidden_field :price,value: @share.price%>
     	<%= f.hidden_field :title ,value: @share.title%>
     	<%= f.hidden_field :area ,value: @share.area%>   	
     	<%= f.hidden_field :comment,value: @share.comment %>
-    	<%= f.hidden_field :image,value: @share.image%>
+    	<%= f.hidden_field :roomid,value: @share.id%>
          
       
      
-	     <tr>
-          <td><%= f.submit "予約する" %><td>
-       </tr>
-        </table>
+	     <div><%= f.submit "予約する",class:'submit' %></div>
+       </div>
         
         
 <%end%>

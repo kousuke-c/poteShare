@@ -13,10 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ body{
+   margin: 0px;
+ }
 header {
     width: 100%;
     height: 70px;
-    padding: 4px 30px;
     background-color: #000000;
   position: relative;
 }
@@ -26,7 +28,7 @@ footer{
     
     width: 100%;
     height: 180px;
-    margin-top: 64px;
+   
     padding-top: 90px;
     background-color: #111;
     box-sizing: border-box;
@@ -41,6 +43,8 @@ footer{
 
 .header-nav-menu {
  display: none;
+ z-index:1000px;
+ margin-right: 50px;
 }
 
 .switch:checked ~  .header-nav-menu{
@@ -49,8 +53,8 @@ footer{
     border: 3px solid #F6F8F9;
 
     position: absolute;
-    top: 70px;
-    right: 10px;
+    top: 57px;
+    right: -40px;
     padding: 15px;
     z-index: 1000;
 }
@@ -316,15 +320,40 @@ margin-top: 50px;
   color: #fff;
 }
 
-.alert{
+ .alert {
+  background-color: #F35500;
   text-align: center;
   margin: 0px;
-  background-color: #87ceeb;
-   color: #fff;
+  color: #fff;
+
 }
+
 .user-info{
   color: #fff;
 }
 .nav-item{
   display: flex;
+}
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    display: table;
+}
+
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px 7px 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px -7px 0;
+    background-color: #c00;
+    color: #fff;
 }

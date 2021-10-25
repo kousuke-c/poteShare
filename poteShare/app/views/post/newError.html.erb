@@ -1,0 +1,66 @@
+  <div class="container-fiuld room-new">
+    <div class="row">
+       
+<div class="col-lg-2 room-nav room-nav-mobile d-lg-none">
+    <ul>
+    <li class="active"><%= link_to "基本情報",new_post_path %></a></li>
+    </ul>
+</div>
+
+
+      
+     <div class="col-lg-10 room-view">
+            <div class="room-view-box">
+                 <%= form_with class: "new_room", url: post_index_path,local: true do |f| %>　　<!--form_forだとうまく送れなかった{form_for '@plan' do |f|}-->
+                    <div class="update-content">
+                        <div class="row">
+                            <h5>ルーム情報登録</h5>
+                        </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+                          
+          <%= f.label :title ,"ルーム名",class: "col-md-3 required-a" %>
+          <%= f.text_field :title ,placeholder: "ルーム名を入力",class: "form-control mb-4 col-md-9"%>
+              </div>
+                    </div>
+        
+       <div class="update-content">
+                        <div class="row">
+        <%= f.label :comment ,"ルーム紹介" ,class: "col-md-3 required-a"%>
+       <%= f.text_field :comment,placeholder: "ルーム説明を入力",class: "form-control mb-4 col-md-9"%>
+         </div>
+                    </div>
+        
+        <div class="update-content">
+                        <div class="row">
+          <%= f.label :price ,"料金" ,class: "col-md-3 required-a"%>
+          <%= f.number_field :price,placeholder: "1日あたりの料金を入力",class: "form-control mb-4 col-md-9"%>
+          </div>
+                    </div>
+ 
+        <div class="update-content">
+                        <div class="row">
+          <%= f.label :area ,"住所",class: "col-md-3 required-a" %>
+          <%= f.text_field :area,placeholder: "住所を入力",class: "form-control mb-4 col-md-9"%>
+        </div>
+                    </div>
+       <div class="update-content">
+                        <div class="row">
+          <%= f.label :image,"ルーム画像",class: "col-md-3 required-a" %>
+          <%= f.file_field :image ,class: " mb-4 col-md-9"%>
+          </div>
+                    </div>
+                    <div class="update-content">
+                        <div class="row">
+          <%= f.submit "登録",class: "submit"%>
+            </div>
+                    </div>
+                    </div>
+     </div>
+
+             <%end%>
+ </div>
+ </div>                
+                           
+                  

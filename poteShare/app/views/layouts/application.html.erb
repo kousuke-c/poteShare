@@ -48,7 +48,7 @@
   <div class ='user-info'>
     <%=label(:label1, current_user.name)%>
      
-    <% if current_user.image%>
+    <% unless current_user.image.blank? %>
      <input type="checkbox" id="label1" class="switch" />
   <label for="label1"><%= image_tag current_user.image.url,width: "240px",height: "140px" , class: "icon-image host-icon"%></label>
   <%else%>
@@ -57,7 +57,7 @@
   
  
  <input type="checkbox" id="label1" class="switch" />
-        <label for="label1"><img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" />
+        <label for="label1"><img class="mx-3 p-1 host-icon nav-trigger" alt="メニュー" src="https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" /></label>
          <%end%>
        
         <ul class="header-nav-menu">
@@ -70,8 +70,7 @@
         </ul>
         
         </div>
-        <div>
-       </div>
+       
       </div>
   
       <%end%>

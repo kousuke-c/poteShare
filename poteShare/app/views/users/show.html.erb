@@ -21,10 +21,10 @@
                         <div class="row">
                             <div class="col-md-6 offset-md-3">
                                 <div class="icon-box">
-                                  <% if @user.image%>
+                                   <% unless @user.image.blank? %>
                                   <%= image_tag @user.image.url,width: "240px",height: "140px" , class: "icon-image host-icon"%>
                                     <%else%>
-                                    <%= image_tag '/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg' ,width: "240px",height: "140px" , class: "icon-image host-icon"%>
+                                    <%= image_tag "https://presite-potepancamp-rails-02.herokuapp.com/assets/default_icon-9263fc59c414b7228d256fc178dcb22183561357950a68f5ad086ba7ee054974.jpg" ,width: "240px",height: "140px" , class: "icon-image host-icon"%>
                                     
                                     <% end%>
                                 </div>
@@ -51,7 +51,7 @@
                         <div class="row">
                           <%= f.label :profile ,"自己紹介" ,class: "col-md-3 required-a"%>
                             
-                           <%= f.text_field :profile ,placeholder: "自己紹介を入力" ,height:'130px',class: "form-control mb-4 col-md-9 profile"%>
+                           <%= f.text_area :profile ,placeholder: "自己紹介を入力" ,height:'130px',class: "form-control mb-4 col-md-9 profile",:size=>"60x10"%>
                           
                         </div>
                     </div>

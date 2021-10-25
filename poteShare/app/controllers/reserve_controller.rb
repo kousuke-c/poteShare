@@ -1,14 +1,15 @@
 class ReserveController < ApplicationController
   def room
    
-    @share = Post.find(params[:format])
-    @reserve = Reserve.new
+    @share = Room.find(params[:format])
+    @reserve = Booking.new
+    
   end
 
   
   def confirm
-    @share = Post.find(params[:format])
-    @reserve = Reserve.new(plan_params)
+    @share = Room.find(params[:format])
+    @reserve = Booking.new(reserve_params)
       
 		if @reserve.invalid?
 			render reserve_room_path(@share)
@@ -16,30 +17,30 @@ class ReserveController < ApplicationController
 		@day=((@reserve.end)-(@reserve.start))/86400
 		@price=@reserve.people*@day*@share.price
 		
-    @image = @share.image 
+   
   end
   
   def comprete
-    Reserve.create(plan_params)
-  @reserve = Reserve.new(plan_params)
+    Booking.create(reserve_params)
+  @reserve = Booking.new(reserve_params)
   end
 
 
 
 
   def back
-		@reserve = Reserve.new(plan_params)
-		@share = Post.find(params[:format])
+		@reserve = Booking.new(reserve_params)
+		@share = Room.find(params[:format])
 		render reserve_room_path
 	end
   
-  def plan_params
-        params.require('reserve').permit(:title ,:price,:area,:comment,:image,:start,:end,:people)
+  def reserve_params
+        params.require(:booking).permit(:title ,:price,:area,:comment,:roomid,:start,:end,:people)
        
   end
   
   def reserved
-    @reserve =Reserve.all
+    @reserve =Booking.all
     
   end
   

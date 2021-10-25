@@ -18,17 +18,17 @@
                         </div>
                     </div>
                     <div class="update-content">
-                        <div class="row">
+                        <div class="row ">
                           
           <%= f.label :title ,"ルーム名",class: "col-md-3 required-a" %>
           <%= f.text_field :title ,placeholder: "ルーム名を入力",class: "form-control mb-4 col-md-9"%>
               </div>
                     </div>
         
-       <div class="update-content">
-                        <div class="row">
+       <div class="update-content tarea-comment">
+                        <div class="row ">
         <%= f.label :comment ,"ルーム紹介" ,class: "col-md-3 required-a"%>
-       <%= f.text_field :comment,placeholder: "ルーム説明を入力",class: "form-control mb-4 col-md-9"%>
+       <%= f.text_area :comment,placeholder: "ルーム説明を入力",class: "form-control mb-4 col-md-9",:size=>"60x10"%>
          </div>
                     </div>
         
@@ -48,12 +48,12 @@
        <div class="update-content">
                         <div class="row">
           <%= f.label :image,"ルーム画像",class: "col-md-3 required-a" %>
-          <%= f.file_field :image ,class: "form-control mb-4 col-md-9"%>
+          <%= f.file_field :image ,class: " mb-4 col-md-9"%>
           </div>
                     </div>
                     <div class="update-content">
                         <div class="row">
-          <%= f.submit "登録完了する"%>
+          <%= f.submit "登録",class: "submit"%>
             </div>
                     </div>
                     </div>
