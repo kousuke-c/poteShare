@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'reserve/room'
   get 'reserve/comprete'
   get 'reserve/confirm'
- post 'users/registrations/profile_update'
+ patch 'users/registrations/profile_update'
 post 'room/create'
  post 'reserve/confirm'
  post 'reserve/comprete'

@@ -1,7 +1,7 @@
 <div class= 'autline'>
   <div class="inline">
     <p class = 'sign_p'>新しいアカウントを作成</p>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),method:"post") do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
 

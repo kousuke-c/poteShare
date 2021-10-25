@@ -3,7 +3,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-def profile_update
+def update
      @post = User.new(params.require(:user).permit(:image,:name,:profile))
        if User.update(params.require(:user).permit(:image,:name,:profile))
          flash[:notice] = "Profile was successfully updated."
