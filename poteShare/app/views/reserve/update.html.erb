@@ -1,0 +1,37 @@
+<table class = 'room-left'>
+    
+        
+        <td><%= @share.price %>sss</td>
+      </tr>
+      <tr>
+        
+        <td><%= @reserve.start %></td>
+      </tr>
+       <tr>
+        
+        <td><%= @reserve.end %></td>
+      </tr>
+      <tr>
+       
+        <td><%= @day %></td>
+      </tr>
+      <tr>
+       
+        <td><%= @reserve.people %></td>
+      </tr>
+    </table>
+   
+
+<%= form_for @reserve, method: :post, url: reserve_comprete_path do |f| %>
+	<%= f.hidden_field :price,value: @price%>
+    	<%= f.hidden_field :title ,value: @share.title%>
+    	<%= f.hidden_field :area ,value: @share.area%>   	
+    	<%= f.hidden_field :comment,value: @share.comment %>
+    	<%= f.hidden_field :image,value: @share.image%>
+           <%= f.hidden_field :start ,value: @reserve.area%>   	
+    	<%= f.hidden_field :end,value: @reserve.comment %>
+
+	<%= f.submit '送信する' %>
+<% end %>
+
+ 

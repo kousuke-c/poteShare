@@ -1,0 +1,170 @@
+// Place all the styles related to the reserve controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room{
+  display:flex;
+  widthL:100%;
+}
+
+.room-left{
+  padding:15px 0px 0px 100px;
+ width:55%;
+}
+
+
+
+.room-left img{
+  
+  margin:10px;
+}
+.room-right{
+  width:30%;
+  margin:15px auto auto 35px;
+  border: 2px solid #F6F8F9;
+  height:400px;
+}
+
+.room-right h3{
+  font-weight:nomal;
+  font-size:20px;
+    margin:15px;
+}
+
+.date{
+  margin:15px;
+  width:100%;
+}
+
+.date-field{
+  width:90%;
+  margin-top:5px;
+  height:35px;
+  border-color:#dcdcdc;
+}
+
+.room-right .submit{
+  width:90%;
+  margin:15px;
+  border-radius:5px;
+  height:40px;
+}
+
+.rooms{
+  font-size:17px;
+}
+
+.aa{
+  padding:15px;
+}
+.sstt{
+  border-top:solid 1px #dcdcdc;
+   border-bottom:solid 1px #dcdcdc;
+   padding:40px;
+}
+
+.roomss {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.stmi{
+  display:flex;
+}
+
+.confirm-in{
+  width:400px;
+  
+  margin:30px auto;
+  border:solid 1px #dcdcdc;
+  height:600px;
+  padding:20px;
+}
+
+.confirm-in .new_reserve{
+  height:40px;
+}
+
+.confirm-price{
+  font-size:20px;
+  margin-top:15px;
+  padding-top:15px;
+  border-top:solid 1px #dcdcdc;
+}
+
+.confirm-date{
+   font-size:16px;
+  padding:10px;
+  border:solid 1px #dcdcdc;
+  background-color:#e9ecef;
+  border-radius:5px;
+}
+
+.confirm-day-people{
+  font-size:15px;
+  padding:15px 0px;
+  border-bottom:solid 1px #dcdcdc;
+}
+
+.confirm-price {
+   font-size:16px;
+  padding:10px;
+  border:solid 1px #dcdcdc;
+  background-color:#e9ecef;
+  border-radius:5px;
+}
+
+.submit {
+  width:100%;
+  border-radius:5px;
+  height:30px;
+}
+
+.cback{
+  background-color:#696969;
+}
+
+.confirm-form{
+  border-top:solid 1px #dcdcdc;
+}
+
+.comprete{
+  height:70vh;
+}
+
+.comprete-in{
+  margin-top:25px;
+  height:400px;
+  padding:25px auto;
+  background-color:#f5f5f5;
+  padding-top:20px;
+}
+
+.comprete-text div{
+  display:flex;
+padding:5px 10px;
+ border-bottom: 1px solid #eaedef;
+ height:60px;
+}
+
+.comprete-text{
+ background-color:#fff;
+  max-width:880px;
+  margin:40px auto;
+  border: 1px solid #eaedef;
+}
+
+.comprete-text p{
+  margin:auto 50px;
+  width:100px;
+  font-size:16px;
+}
+
+.b{
+  font-weight:bold;
+}
+
+.room-image img {
+    width: 100%;
+}

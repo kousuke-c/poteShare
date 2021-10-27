@@ -1,0 +1,29 @@
+<div class= 'autline'>
+  <div class="inline">
+<p>ログイン</p>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field-sign">
+    <div class="col-2 required-b pt-2"></div>
+    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"  %>
+  </div>
+
+  <div class="field-sign">
+    <div class="col-2 required-b pt-2"></div>
+    
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"  %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= f.submit "ログイン" %>
+  </div>
+  <div class= 'sign_link'><%= link_to"新しいアカウントを作成", new_user_registration_path,class: 'sign-link' %></div>
+  <% end %>
+  
+
+
+</div>
+
+</div>

@@ -1,0 +1,38 @@
+
+<div class = 'posts'><h5>登録済みルーム一覧</h5>
+  
+  
+    <div class='posts-border'>
+       
+             <div class ='image ppd'>ルーム画像</div>
+            <div class = 'title ppd'>ルーム名</div>
+            <div class ='room ppd'>ルーム紹介</div>
+            <div class ='price ppd'>料金	</div>
+            <div class = 'day ppd'>作成日	</div>
+            
+            </div>
+            
+            <% @room.each do |room| %>
+              
+         <div class='posts-border'>
+       
+             <div class = 'posts-image'><% if room.image.url%>
+              <%= link_to image_tag(room.image.url ,width: "240px",height: "140px" ),reserve_room_path(room)%>
+            <%else%>
+            <p>画像がありません</p>
+          <%end%></div>
+          <%= link_to room.title,reserve_room_path(room),class:'title2 ppd2'%>
+            
+            <div class ='room2 ppd2'><%= room.comment %></div>
+            <div class ='price2 ppd2'>¥<%= room.price%>	</div>
+            <div class = 'day2 ppd2'><%= room.updated_at.strftime("%Y年%m月%d日%-H時%M分")%>	</div>
+            
+            </div>
+           
+          
+           
+           <% end %>
+           
+   </table>
+   <div class='posts-border'> </div>
+</div>

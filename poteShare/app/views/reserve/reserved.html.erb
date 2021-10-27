@@ -1,0 +1,50 @@
+ 
+  
+           
+  <div class = 'posts'><h5>予約済みルーム一覧</h5>
+  
+  
+    <div class='posts-border'>
+       
+             <div class ='image ppd'>ルーム画像</div>
+            <div class = 'title ppd'>ルーム名</div>
+            <div class ='room ppd'>ルーム紹介</div>
+            <div class ='price ppd'>合計料金</div>
+            <div class = 'day ppd'>開始日</div>
+            <div class = 'day ppd'>終了日</div>
+            <div class = 'day ppd'>予約確定日時</div>
+            
+            </div>
+            
+            <% @reserve.each do |reserve| %>
+              
+         <div class='posts-border'>
+       
+             <div class = 'posts-image'>
+              
+              <%id = reserve.roomid%>
+              <%room = Room.find(id)%>
+              
+              <% if room.image.url%>
+             
+              <%= link_to image_tag(room.image.url ,width: "240px",height: "140px" ),reserve_room_path(room)%>
+            <%else%>
+            <p>画像がありません</p>
+          <%end%></div>
+          <%= link_to reserve.title,reserve_room_path(room),class:'title2 ppd2'%>
+            
+            <div class ='room2 ppd2 '><%= reserve.comment %></div>
+            <div class ='price2 ppd2 rr'>¥<%= reserve.price%>	</div>
+            <div class ='day3 ppd2 rr'><%= reserve.start.strftime('%Y/%m/%d')%>	</div>
+            <div class ='day3 ppd2 rr'><%= reserve.end.strftime('%Y/%m/%d')%>	</div>
+            <div class = 'day3 ppd2 rr'><%= reserve.updated_at%>	</div>
+            
+            </div>
+           
+          
+           
+           <% end %>
+           
+   </table>
+   <div class='posts-border'> </div>
+</div>
