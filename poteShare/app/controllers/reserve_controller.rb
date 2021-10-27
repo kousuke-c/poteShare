@@ -2,14 +2,14 @@ class ReserveController < ApplicationController
   def room
    
     @room = Room.find(params[:format])
-    @reserve = Booking.new
+    @reserve = Reserve.new
     
   end
 
   
   def confirm
     @room = Room.find(params[:format])
-    @reserve = Booking.new(reserve_params)
+    @reserve = Reserve.new(reserve_params)
       
 		if @reserve.invalid?
 			render reserve_room_path
@@ -22,27 +22,27 @@ class ReserveController < ApplicationController
   end
   
   def comprete
-    Booking.create(reserve_params)
-  @reserve = Booking.new(reserve_params)
+    Reserve.create(reserve_params)
+  @reserve = Reserve.new(reserve_params)
   end
 
 
 
 
   def back
-		@reserve = Booking.new(reserve_params)
+		@reserve = Reserve.new(reserve_params)
 		@room = Room.find(params[:format])
 		render reserve_room_path
 	end
   
   def reserve_params
-        params.require(:booking).permit(:title ,:price,:area,:comment,:roomid,:start,:end,:people)
+        params.require(:reserve).permit(:title ,:price,:area,:comment,:roomid,:start,:end,:people)
        
   end
   
   def reserved
-    @reserve =Booking.all
-    
+    @reserve =Reserve.all
+   
   end
   
 end

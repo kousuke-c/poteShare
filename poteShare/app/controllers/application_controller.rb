@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 before_action :search
- protect_from_forgery with: :null_session
-
+ 
 
 def search
  @q = Room.ransack(params[:q])

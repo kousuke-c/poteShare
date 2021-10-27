@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
   </head>
   <body>
 <header>
@@ -46,7 +47,7 @@
 <div class="nav-item">
   
   <div class ='user-info'>
-    <%=label(:label1, current_user.name)%>
+    <div class='info-label'><%=label(:label1, current_user.name)%></div>
      
     <% unless current_user.image.blank? %>
      <input type="checkbox" id="label1" class="switch" />
@@ -80,6 +81,8 @@
 </header>
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
+       
+       
     <%= yield %>
     <footer><p>© 2020 POTEPAN.INC.</p></footer>
   </body>

@@ -10,13 +10,18 @@ Rails.application.routes.draw do
   get 'reserve/room'
   get 'reserve/comprete'
   get 'reserve/confirm'
- patch 'users/registrations/profile_update'
+  get 'reserve/room'
+devise_scope :users do
+  post'update_profile',to:'users/registrations#update_profile'
+  patch 'update_profile',to:'users/registrations#update_profile'
+end
+
 post 'room/create'
  post 'reserve/confirm'
  post 'reserve/comprete'
  post 'reserve/back' 
   get 'reserve/reserved'
-  get 'reserve/room'
+
 
   get 'search' => 'room#search'
   get 'room/search'

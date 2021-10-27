@@ -330,9 +330,11 @@ margin-top: 50px;
 
 .user-info{
   color: #fff;
-}
-.nav-item{
   display: flex;
+  vertical-align: center;
+}
+ .info-label{
+  margin: auto 10px;
 }
 
 .field_with_errors {
@@ -356,4 +358,159 @@ margin-top: 50px;
     margin: -7px -7px 0;
     background-color: #c00;
     color: #fff;
+}
+
+@media screen and (max-width: 991px) {
+	/* 991px以下に適用されるCSS（タブレット用） */
+	.row{
+	  flex-direction: column;
+	  flex-wrap: wrap;
+	}
+	.user-view{
+	  width: 100%;
+	}
+	.container-fiuld .row {
+    height: auto;
+}
+.offset-md-3 {
+    margin:auto;
+}
+.container-fiuld {
+    height: auto; 
+}
+.d-lg-none {
+     width: 100%; 
+}
+.col-lg-2 ul{
+  display: flex;
+}
+
+
+
+
+.room-view {
+   width: 100%;
+}
+.new_room .row{
+  flex-direction:row;
+}
+
+.tarea-comment .col-md-9 {
+    height: 150px;
+}
+
+
+
+
+.room-image img {
+    height: 270px;
+    width: 450px;
+}
+.room-right {
+  
+    margin-left:50px;
+    
+}
+.room-left {
+    padding-left:40px;
+    width: 55%;
+}
+.header-left-nav .search {
+    display: none;
+}
+
+.container {
+    max-width: 720px;
+}
+.form-fream {
+   width: 100%;
+}
+.col-lg-6{
+  max-width: 90%;
+  margin: 0px auto;
+}
+.form-area {
+width: 100%;
+}
+
+.col-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.m-5 .row {
+   margin-left: 0px;
+    flex-direction: row;
+}
+}
+
+@media screen and (max-width: 767px) {
+	/* 767px以下に適用されるCSS（タブレット用） */
+	.update-content{
+	  margin-left: 40px;
+	}
+  .update-content label {
+  width: 100%;
+  }
+  .update-content .col-md-9 {
+    width: 100%;
+    margin: 10px 0px;
+}
+.tarea-comment .col-md-9 {
+    height: 110px;
+}
+.col-md-9 {
+    
+    max-width: 100%;
+  
+}
+
+
+.room{
+  flex-direction:column;
+}
+
+.room-left {
+    margin: 30px auto;
+    width: 500px;
+    padding:0px;
+}
+.room-image img {
+    height: auto;
+    width: 100%;
+    margin: 0px;
+}
+.room-right {
+    width: 70%;
+    margin: 15px auto 10px auto;
+    border: 2px solid #F6F8F9;
+    height: 400px;
+}
+
+
+}
+
+
+@media screen and (max-width: 575px) {
+  .room-left {
+   margin: 40px 0px 0px 0px;
+   width: 100%;
+}
+
+.room-right {
+    width: 100%;
+    margin: 15px auto 10px auto;
+    border: 2px solid #F6F8F9;
+    height: 400px;
+}
+  .info-label{
+    display: none;
+}
+
+.col-lg-6{
+  max-width: 80%;
+  margin: 0px auto;
+}
+
 }

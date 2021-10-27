@@ -1,5 +1,6 @@
-class Booking < ApplicationRecord
-  validates :start,:end,:people,presence: true
+class Reserve < ApplicationRecord
+  validates :start,:end ,presence: true
+  validates :people,presence: true
   validate :start_end_check
  
   def start_end_check

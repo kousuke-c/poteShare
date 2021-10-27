@@ -1,4 +1,7 @@
 class RoomController < ApplicationController
+    
+    protect_from_forgery
+    
   def index
    @q = Room.ransack(params[:q])
    @search = @q.result(distinct: true)
@@ -26,10 +29,11 @@ class RoomController < ApplicationController
       @room = Room.new(room_params)
       
        if @room.save
-         flash[:notice] = "ルーム登録しました"
-         redirect_to "/"
+         
+         redirect_to  reserve_room_path(@room)
+         
        else if @room.invalid?
-           render new_room_path
+           render :new
        end
   end
   end
@@ -37,7 +41,7 @@ class RoomController < ApplicationController
   
   
   def room_params
-        params.permit(:title ,:price,:area,:comment,:image)
+        params.require(:room).permit(:title ,:price,:area,:comment,:image)
        
   end
   

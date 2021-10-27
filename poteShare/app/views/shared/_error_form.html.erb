@@ -1,0 +1,9 @@
+<% if @reserve.errors.include?(:people) %>
+  <p class="alert">人数は必須です</p>
+  <%end%>
+  
+  <%if @reserve.errors.include?(:end)%>
+  <p class="alert">終了日は開始日より後にしてください</p>
+  <%end%>
+  
+  
